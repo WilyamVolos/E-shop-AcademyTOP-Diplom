@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <title>Order page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/CSS/style.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            background-image: url('/img/bg2.jpg');
+            /*background-size: cover; !* or use contain, auto, or specific values like 100% 100% *!*/
+            /*background-repeat: no-repeat; !* to prevent repeating *!*/
+            /*background-position: center; !* center the image *!*/
+        }
+    </style>
+</head>
+<body>
+<div th:insert="~{fragment/topnav :: navigation}"></div>
+<div class="order-content">
+    <table>
+        <tr>
+            <th>Order ID</th>
+            <th>Creation Date</th>
+            <th>Customer Name</th>
+        </tr>
+        <tr>
+            <td th:text="${order.orderId}">Order</td>
+            <td th:text="${order.createdAt}">createdAt</td>
+            <td sec:authentication="principal.username">Name</td>
+        </tr>
+    </table>
+    <table>
+        <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p : ${order.products}">
+            <td>
+                <div class="product-image">
+                    <img th:src="|${p.image.link}|" th:alt="|${p.image.link}|">
+                </div>
+            </td>
+            <td>
+                <div th:text="${p.name}"></div>
+            </td>
+            <td>
+                <div th:text="${p.description}"></div>
+            </td>
+            <td>
+                <div th:utext="${'&#36;'+'&nbsp;'} + ${p.price}"></div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:insert="~{fragment/footer :: footer}"></div>
+</body>
+</html>

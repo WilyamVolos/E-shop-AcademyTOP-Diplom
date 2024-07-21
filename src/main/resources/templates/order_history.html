@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Order history page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/CSS/style.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            background-image: url('/img/bg2.jpg');
+            background-size: cover; /* or use contain, auto, or specific values like 100% 100% */
+            /*background-repeat: no-repeat; !* to prevent repeating *!*/
+            /*background-position: center; !* center the image *!*/
+        }
+    </style>
+</head>
+<body>
+<div th:insert="~{fragment/topnav :: navigation}"></div>
+<h2>Order history</h2>
+<table>
+    <tr>
+        <th>Order id</th>
+        <th>Price</th>
+        <th>Created date</th>
+    </tr>
+    <th:block th:each="o : ${orders}">
+        <tr>
+            <td>
+                <a th:href="@{'/order/read/' + ${o.orderId}}" th:text="${o.orderId}"></a>
+            </td>
+            <td th:text="${o.price}"></td>
+            <td th:text="${o.createdAt}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+<div th:insert="~{fragment/footer :: footer}"></div>
+</html>
