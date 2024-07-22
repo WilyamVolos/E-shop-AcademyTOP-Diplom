@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Registration page</title>
+    <link th:href="@{/CSS/style.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="/javaScript/toggle-password.js"></script>
+    <style>
+        body {
+            background-image: url('/img/bg2.jpg');
+            background-size: cover; /* or use contain, auto, or specific values like 100% 100% */
+            /*background-repeat: no-repeat; !* to prevent repeating *!*/
+            /*background-position: center; !* center the image *!*/
+        }
+    </style>
+</head>
+<body>
+<div th:insert="~{fragment/topnav :: navigation}"></div>
+<form class="main-content" th:action="@{/users/registrate}" th:object="${registration_form_dto}" method="post">
+    <div class="container">
+        <h2>Please fill in this form to create an account.</h2>
+        <hr>
+        <label for="name"><b>Username</b></label>
+        <input type="text" placeholder="Enter name" name="name" id="name">
+        <div class="password-container">
+            <label for="psw"><b>Password</b></label>
+            <div class="password-input">
+                <input type="password" placeholder="Enter password" name="password" id="psw" required>
+                <span class="toggle-password" onclick="togglePasswordVisibility()">&#128065;</span>
+            </div>
+        </div>
+        <label for="mail"><b>Email</b></label>
+        <input type="email" placeholder="Enter email" name="email" id="mail" required>
+        <label for="user-birth-date"><b>Date of birth:</b></label>
+        <input type="date" name="birthDate" id="user-birth-date" required/>
+        <p>Already have an account? <a href="/login">Sign in</a>.</p>
+        <button type="submit" value="Submit" class="register-btn">Submit</button>
+        <button type="reset" value="Reset" class="register-btn">Reset</button>
+    </div>
+</form>
+</body>
+<div th:insert="~{fragment/footer :: footer}"></div>
+</html>
