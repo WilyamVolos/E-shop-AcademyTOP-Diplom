@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/CSS/style.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            background-image: url('/img/bg2.jpg');
+            background-size: cover; /* or use contain, auto, or specific values like 100% 100% */
+            /*background-repeat: no-repeat; !* to prevent repeating *!*/
+            /*background-position: center; !* center the image *!*/
+        }
+    </style>
+</head>
+<body>
+<div th:insert="~{fragment/topnav :: navigation}"></div>
+<div class="error-content">
+    <h2>Error</h2>
+    <p>Ой..., похоже страница потерялась.
+        Это не ошибка, а просто несчастный случай, который не был преднамеренным... ))) </p>
+    <p th:text="${error_message}"></p>
+    <p th:text="${userNotFoundException}"></p>
+    <img src="/img/error.png" alt="error 404">
+    <a th:href="@{/home}">
+        <button type="button">Try again...</button>
+    </a>
+</div>
+</body>
+<div th:insert="~{fragment/footer :: footer}"></div>
+</html>
