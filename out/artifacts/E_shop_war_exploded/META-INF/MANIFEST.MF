@@ -4,6 +4,6 @@ Built-By: Wilya
 Build-Jdk: JetBrains Runtime 17.0.9
 Implementation-Title: E-shop
 Implementation-Version: 0.0.1-SNAPSHOT
-Implementation-Vendor-Id: by.petrovich
+Implementation-Vendor-Id: com.academytop
 Main-Class: ${start-class}
 
