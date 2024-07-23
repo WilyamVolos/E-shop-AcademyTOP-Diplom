@@ -8,7 +8,7 @@
         <version>3.0.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>by.petrovich</groupId>
+    <groupId>com.academytop</groupId>
     <artifactId>E-shop</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>E-shop</name>
