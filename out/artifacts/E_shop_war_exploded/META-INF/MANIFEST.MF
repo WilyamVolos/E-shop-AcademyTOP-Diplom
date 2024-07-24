@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
-Built-By: Wilya
-Build-Jdk: JetBrains Runtime 17.0.9
+Built-By: l_vla
+Build-Jdk: JetBrains Runtime 17.0.11
 Implementation-Title: E-shop
 Implementation-Version: 0.0.1-SNAPSHOT
 Implementation-Vendor-Id: com.academytop
