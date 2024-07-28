@@ -1,5 +1,5 @@
 package ru.academytop.eshop.controllers;
 
-// В разработке CRUD
+// В разработке CRUD...
 public class AdminController {
 }
