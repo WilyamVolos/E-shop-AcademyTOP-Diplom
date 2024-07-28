@@ -15,7 +15,7 @@
     <mvc:annotation-driven/>
 
     <!-- Сканирование пакетов для поиска контроллеров -->
-    <context:component-scan base-package="ru.academytop.eshop.controller"/>
+    <context:component-scan base-package="ru.academytop.eshop.controllers"/>
 
     <!-- Определение представлений (view resolver) -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

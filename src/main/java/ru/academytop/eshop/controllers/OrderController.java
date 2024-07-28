@@ -1,4 +1,4 @@
-package ru.academytop.eshop.controller;
+package ru.academytop.eshop.controllers;
 
 import ru.academytop.eshop.entity.User;
 import ru.academytop.eshop.service.OrderService;

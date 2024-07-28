@@ -1,4 +1,4 @@
-package ru.academytop.eshop.controller;
+package ru.academytop.eshop.controllers;
 
 import ru.academytop.eshop.dto.CartDto;
 import ru.academytop.eshop.entity.Order;

@@ -1,4 +1,4 @@
-package ru.academytop.eshop.controller;
+package ru.academytop.eshop.controllers;
 
 // В разработке CRUD
 public class AdminController {
